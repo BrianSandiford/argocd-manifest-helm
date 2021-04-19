@@ -3,3 +3,4 @@
 deployment:
   image: "briansandiford/demodockerfileapp"
   tag: "1.0.4"
+name: demodockerfileapp

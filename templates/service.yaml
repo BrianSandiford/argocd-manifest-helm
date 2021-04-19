@@ -1,10 +1,10 @@
 apiVersion: v1
 kind: Service
 metadata:
-  name: demodockerfileapp
+  name: "{{ .Values.name }}"
 spec:
   selector:
-    app: demodockerfileapp
+    app: "{{ .Values.name }}"
   ports:
   - protocol: "TCP"
     port: 5000

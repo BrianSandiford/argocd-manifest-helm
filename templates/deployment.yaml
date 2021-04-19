@@ -2,12 +2,12 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: demodockerfileapp
+  name: "{{ .Values.name }}"
 
 spec:
   selector:
     matchLabels:
-      app: demodockerfileapp
+      app: "{{ .Values.name }}"
   replicas: 1
   strategy:
     type: RollingUpdate
@@ -17,10 +17,10 @@ spec:
   template:
     metadata:
       labels:
-        app: demodockerfileapp
+        app: "{{ .Values.name }}"
     spec:
       containers:
-      - name: demodockerfileapp
+      - name: "{{ .Values.name }}"
         image: {{ .Values.deployment.image }}
         imagePullPolicy: "Always"
         ports:
