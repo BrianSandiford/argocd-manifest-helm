@@ -21,7 +21,7 @@ spec:
     spec:
       containers:
       - name: demodockerfileapp
-        image: briansandiford/demodockerfileapp
+        image: {{ .Values.deployment.image }}
         imagePullPolicy: "Always"
         ports:
         - containerPort: 5000
